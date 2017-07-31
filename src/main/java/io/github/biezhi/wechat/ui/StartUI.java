@@ -115,6 +115,14 @@ public class StartUI extends WechatApi {
             });
         }
         log.info(Const.LOG_MSG_SNAPSHOT);
+
+        //给好友发送消息
+        for (JsonElement element : contactList) {
+            JsonObject item = element.getAsJsonObject();
+            //this.sendText("自动发送",item.get("UserName").getAsString());
+        }
+
+
         super.snapshot();
         this.listen();
     }
